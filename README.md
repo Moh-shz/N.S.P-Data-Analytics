@@ -81,8 +81,8 @@ To uncover actionable insights from course and registration data to help the ins
 
 ## Contact
 
-**Created by**: Mohammad Sharzehei 
-Email: sharzehm@gmail.com 
+**Created by**: Mohammad Sharzehei  
+Email: sharzehm@gmail.com  
 LinkedIn: www.linkedin.com/in/msharzehei
 
 ---
