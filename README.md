@@ -43,6 +43,21 @@ To uncover actionable insights from course and registration data to help the ins
 
 ---
 
+## Interactive Dashboard
+
+Explore key insights interactively through the published Tableau dashboard:
+
+[NSP Student Analytics Dashboard](https://moh-shz.github.io/N.S.P-Data-Analytics/)
+
+This dashboard showcases core metrics such as:
+
+- Student enrollment by month, season, course, and region
+- Revenue breakdowns by time, course type, and loyalty status
+- Regional engagement and trends
+- Popular course combinations and behavioural patterns
+
+---
+
 ## Project Structure
 
 ```
