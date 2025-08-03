@@ -1,0 +1,2939 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.0514.2217                               -->
+<workbook original-version='18.1' source-build='2025.2.0 (20252.25.0514.2217)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+        <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+        <members>
+          <member value='&quot;Students per Month&quot;' />
+          <member value='&quot;Students per Season&quot;' />
+          <member value='&quot;Students per Course&quot;' />
+          <member value='&quot;Students by Region&quot;' />
+        </members>
+      </column>
+      <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+        <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+        <members>
+          <member value='&quot;Income per Month&quot;' />
+          <member value='&quot;Income per Season&quot;' />
+          <member value='&quot;Income by Course Type&quot;' />
+          <member value='&quot;Income by Region&quot;' />
+        </members>
+      </column>
+      <column caption='Loyalty Charts Selector' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income Loyal vs Non-loyal&quot;'>
+        <calculation class='tableau' formula='&quot;Income Loyal vs Non-loyal&quot;' />
+        <members>
+          <member value='&quot;Student Loyalty Distribution&quot;' />
+          <member value='&quot;Income Loyal vs Non-loyal&quot;' />
+        </members>
+      </column>
+      <column caption='Behaviour Charts Selector' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Most Popular Combinations&quot;'>
+        <calculation class='tableau' formula='&quot;Most Popular Combinations&quot;' />
+        <members>
+          <member value='&quot;Most Popular Combinations&quot;' />
+          <member value='&quot;Classes by Weekday&quot;' />
+        </members>
+      </column>
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[Parameter 1]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Students per Course&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Students per Month&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+    </datasource>
+    <datasource caption='data' inline='true' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='data' name='textscan.0czovnv1gfolyf1b0gvlc0wrryhq'>
+            <connection class='textscan' directory='/Users/mohammadsharzeh/Downloads/nsp' filename='data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0czovnv1gfolyf1b0gvlc0wrryhq' name='data.csv' table='[data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='course_type' ordinal='0' />
+            <column datatype='integer' name='course_round' ordinal='1' />
+            <column datatype='date' name='course_date' ordinal='2' />
+            <column datatype='integer' name='student_id' ordinal='3' />
+            <column datatype='string' name='address' ordinal='4' />
+            <column datatype='integer' name='amount_irr' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[course_type]</local-name>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias>course_type</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_round</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[course_round]</local-name>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias>course_round</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[course_date]</local-name>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias>course_date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>student_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[student_id]</local-name>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias>student_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[address]</local-name>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias>address</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>amount_irr</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[amount_irr]</local-name>
+            <parent-name>[data.csv]</parent-name>
+            <remote-alias>amount_irr</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Show - Students per Month' datatype='boolean' name='[Calculation_1103030103430766592]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students per Month&quot;' />
+      </column>
+      <column caption='Show - Students per Season' datatype='boolean' name='[Calculation_1103030103433076737]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students per Season&quot;' />
+      </column>
+      <column caption='Show - Students per Course' datatype='boolean' name='[Calculation_1103030103433265154]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students per Course&quot;' />
+      </column>
+      <column caption='Show - Students by Region' datatype='boolean' name='[Calculation_1103030103433678851]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students by Region&quot;' />
+      </column>
+      <column caption='Show - Income per Month' datatype='boolean' name='[Calculation_1295770093758791680]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income per Month&quot;' />
+      </column>
+      <column caption='Show - Income per Season' datatype='boolean' name='[Calculation_1295770093759086593]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income per Season&quot;' />
+      </column>
+      <column caption='Show - Income by Course Type' datatype='boolean' name='[Calculation_1295770093759299586]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income by Course Type&quot;' />
+      </column>
+      <column caption='Show - Income by Region' datatype='boolean' name='[Calculation_1295770093759565827]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income by Region&quot;' />
+      </column>
+      <column caption='Courses per Student' datatype='integer' name='[Calculation_1295770093761597444]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [student_id] : COUNT([course_round]) }' />
+      </column>
+      <column caption='Loyalty Status' datatype='string' name='[Calculation_1295770093762330629]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF { FIXED [student_id] : COUNT([course_round]) } &gt; 1 THEN&#10;    &quot;Loyal&quot;&#10;ELSE&#10;    &quot;Non-loyal&quot;&#10;END' />
+      </column>
+      <column caption='Show - Student Loyalty Distribution' datatype='boolean' name='[Calculation_1431159557567471616]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 3] = &quot;Student Loyalty Distribution&quot;' />
+      </column>
+      <column caption='Show - Income Loyal vs Non-loyal' datatype='boolean' name='[Calculation_1431159557567721473]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 3] = &quot;Income Loyal vs Non-loyal&quot;' />
+      </column>
+      <column caption='Class Weekday' datatype='string' name='[Calculation_1431159557568741378]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='DATENAME(&apos;weekday&apos;, [course_date])' />
+      </column>
+      <column caption='Show - Classes by Weekday' datatype='boolean' name='[Calculation_1431159557574451204]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 4] = &quot;Classes by Weekday&quot;' />
+      </column>
+      <column caption='Season' datatype='string' name='[Calculation_975873782696701953]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE MONTH([course_date])&#10;WHEN 1 THEN &quot;Winter&quot;&#10;WHEN 2 THEN &quot;Winter&quot;&#10;WHEN 3 THEN &quot;Winter&quot;&#10;WHEN 4 THEN &quot;Spring&quot;&#10;WHEN 5 THEN &quot;Spring&quot;&#10;WHEN 6 THEN &quot;Spring&quot;&#10;WHEN 7 THEN &quot;Summer&quot;&#10;WHEN 8 THEN &quot;Summer&quot;&#10;WHEN 9 THEN &quot;Summer&quot;&#10;WHEN 10 THEN &quot;Autumn&quot;&#10;WHEN 11 THEN &quot;Autumn&quot;&#10;WHEN 12 THEN &quot;Autumn&quot;&#10;END' />
+      </column>
+      <column caption='Region' datatype='string' name='[Calculation_975873782699323395]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF CONTAINS(LOWER([address]), &quot;shiraz&quot;) THEN &quot;shiraz&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;safashahr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;eghlid&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;marvdasht&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;zarghan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kazeroon&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;firoozabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kavar&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kharameh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;jahrom&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;estahban&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;neyriz&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;farashband&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;mohr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;maghar&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;darab&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;juyom&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;lamerd&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;arsanjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;khonj&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ardakan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;larestan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;vorabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;fasa&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ghaderabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;abadeh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;zarrindasht&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;sarvestan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;saadat_shahr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;dasht_arzhan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ahl&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ashkanan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;goyem&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;pasargard&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;atashkadeh&quot;) THEN &quot;fars&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;qeshm&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;bastak&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kharg&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;bandarabbas&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kish&quot;) THEN &quot;hormozgan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;bushehr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;genaveh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;borazjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;jam&quot;) THEN &quot;bushehr&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;yasuj&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;gachsaran&quot;) THEN &quot;kohgiluyeh and boyerahmad&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;kerman&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;sirjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;meymand&quot;) THEN &quot;kerman&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;golestan&quot;) THEN &quot;golestan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;ahvaz&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;behbahan&quot;) THEN &quot;khuzestan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;yazd&quot;) THEN &quot;yazd&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;england&quot;) THEN &quot;abroad&quot;&#10;&#10;ELSEIF ISNULL([address]) THEN &quot;unknown&quot;&#10;&#10;ELSE &quot;undefined&quot;&#10;END' />
+      </column>
+      <column caption='data.csv' datatype='table' name='[__tableau_internal_object_id__].[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]' role='measure' type='quantitative' />
+      <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+      <column caption='Amount Irr' datatype='integer' name='[amount_irr]' role='measure' type='quantitative' />
+      <column caption='Course Date' datatype='date' name='[course_date]' role='dimension' type='ordinal' />
+      <column caption='Course Round' datatype='integer' name='[course_round]' role='measure' type='quantitative' />
+      <column caption='Course Type' datatype='string' name='[course_type]' role='dimension' type='nominal' />
+      <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+      <column-instance column='[Calculation_1295770093762330629]' derivation='None' name='[none:Calculation_1295770093762330629:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1431159557568741378]' derivation='None' name='[none:Calculation_1431159557568741378:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_975873782696701953]' derivation='None' name='[none:Calculation_975873782696701953:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_975873782699323395]' derivation='None' name='[none:Calculation_975873782699323395:nk]' pivot='key' type='nominal' />
+      <column-instance column='[course_type]' derivation='None' name='[none:course_type:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_GB' class='hyper' dbname='/var/folders/85/fs2zvxz515zd08hm3pcrw0l00000gn/T/tableau-temp/#TableauTemp_163qs5s05vubwx118sfh31c5mxn2.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/03/2025 01:05:03 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>course_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[course_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>course_type</remote-alias>
+              <ordinal>0</ordinal>
+              <family>data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_round</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[course_round]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>course_round</remote-alias>
+              <ordinal>1</ordinal>
+              <family>data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[course_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>course_date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>data.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>71</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>student_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[student_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>student_id</remote-alias>
+              <ordinal>3</ordinal>
+              <family>data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>292</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>address</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[address]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>address</remote-alias>
+              <ordinal>4</ordinal>
+              <family>data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>amount_irr</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[amount_irr]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>amount_irr</remote-alias>
+              <ordinal>5</ordinal>
+              <family>data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[data.csv_D3F0B70D3D3A4A02956DE20746D06F4C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_1431159557568741378:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Monday&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Friday&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Thursday&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sunday&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Wednesday&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Saturday&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Tuesday&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_975873782699323395:nk]' type='palette'>
+            <map to='#7c4d79'>
+              <bucket>&quot;shiraz&quot;</bucket>
+            </map>
+            <map to='#865986'>
+              <bucket>&quot;fars&quot;</bucket>
+            </map>
+            <map to='#926591'>
+              <bucket>&quot;undefined&quot;</bucket>
+            </map>
+            <map to='#9a6a96'>
+              <bucket>&quot;unknown&quot;</bucket>
+            </map>
+            <map to='#b27ba1'>
+              <bucket>&quot;bushehr&quot;</bucket>
+            </map>
+            <map to='#be89ac'>
+              <bucket>&quot;kohgiluyeh and boyerahmad&quot;</bucket>
+            </map>
+            <map to='#c48fb2'>
+              <bucket>&quot;hormozgan&quot;</bucket>
+            </map>
+            <map to='#ca96b8'>
+              <bucket>&quot;kerman&quot;</bucket>
+            </map>
+            <map to='#d5a4c4'>
+              <bucket>&quot;khuzestan&quot;</bucket>
+            </map>
+            <map to='#e6b9d9'>
+              <bucket>&quot;abroad&quot;</bucket>
+            </map>
+            <map to='#eac1df'>
+              <bucket>&quot;yazd&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;golestan&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_975873782696701953:nk]' type='palette'>
+            <map to='#24693d'>
+              <bucket>&quot;Summer&quot;</bucket>
+            </map>
+            <map to='#428f4d'>
+              <bucket>&quot;Autumn&quot;</bucket>
+            </map>
+            <map to='#6eb663'>
+              <bucket>&quot;Spring&quot;</bucket>
+            </map>
+            <map to='#a5db96'>
+              <bucket>&quot;Winter&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:course_type:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;barista&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;fried_chicken&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;cake&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;sausage&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;nugget&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;traditional&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;burger&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;kabab&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;bread&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;pizza&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1295770093762330629:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Loyal&quot;</bucket>
+            </map>
+            <map to='#e03531'>
+              <bucket>&quot;Non-loyal&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+          <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+        </column>
+        <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+          <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+        </column>
+        <column caption='Loyalty Charts Selector' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income Loyal vs Non-loyal&quot;'>
+          <calculation class='tableau' formula='&quot;Income Loyal vs Non-loyal&quot;' />
+        </column>
+        <column caption='Behaviour Charts Selector' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Most Popular Combinations&quot;'>
+          <calculation class='tableau' formula='&quot;Most Popular Combinations&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='data.csv' id='data.csv_D3F0B70D3D3A4A02956DE20746D06F4C'>
+            <properties context=''>
+              <relation connection='textscan.0czovnv1gfolyf1b0gvlc0wrryhq' name='data.csv' table='[data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='string' name='course_type' ordinal='0' />
+                  <column datatype='integer' name='course_round' ordinal='1' />
+                  <column datatype='date' name='course_date' ordinal='2' />
+                  <column datatype='integer' name='student_id' ordinal='3' />
+                  <column datatype='string' name='address' ordinal='4' />
+                  <column datatype='integer' name='amount_irr' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Sheet1 (most_popular_course_combos)' inline='true' name='federated.1rpjhit0j8uzjx12v4nhx03bxv65' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='most_popular_course_combos' name='excel-direct.1covh8w12npxqj1ej7gby0vkzco9'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/mohammadsharzeh/Downloads/nsp/most_popular_course_combos.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1covh8w12npxqj1ej7gby0vkzco9' name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:B13:no:A1:B13:0' header='yes' outcome='6'>
+            <column datatype='string' name='Course Combo' ordinal='0' />
+            <column datatype='integer' name='Student Count' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B13:no:A1:B13:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Course Combo</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Course Combo]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Course Combo</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_0DE8142CE5154DDF97D19E80C46A258E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Student Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Student Count]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Student Count</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_0DE8142CE5154DDF97D19E80C46A258E]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Show - Most Popular Combinations' datatype='boolean' name='[Calculation_1431159557574250499]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 4] = &quot;Most Popular Combinations&quot;' />
+      </column>
+      <column datatype='string' name='[Course Combo]' role='dimension' type='nominal' />
+      <column caption='Sheet1' datatype='table' name='[__tableau_internal_object_id__].[Sheet1_0DE8142CE5154DDF97D19E80C46A258E]' role='measure' type='quantitative' />
+      <column-instance column='[Course Combo]' derivation='None' name='[none:Course Combo:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_GB' class='hyper' dbname='/var/folders/85/fs2zvxz515zd08hm3pcrw0l00000gn/T/tableau-temp/#TableauTemp_04oiqbw1gsslha1f56iyu0zr3dp6.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='08/03/2025 01:16:34 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Course Combo</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Course Combo]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Course Combo</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RGB_S2' />
+              <object-id>[Sheet1_0DE8142CE5154DDF97D19E80C46A258E]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Student Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Student Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Student Count</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Sheet1_0DE8142CE5154DDF97D19E80C46A258E]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Course Combo:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;burger + sausage&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;barista + bread&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;burger + fried_chicken&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;fried_chicken + pizza&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;burger + kabab&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;barista + burger&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;burger + nugget&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;kabab + pizza&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;burger + pizza&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;barista + cake&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;nugget + sausage&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;barista + pizza&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Behaviour Charts Selector' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Most Popular Combinations&quot;'>
+          <calculation class='tableau' formula='&quot;Most Popular Combinations&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Sheet1' id='Sheet1_0DE8142CE5154DDF97D19E80C46A258E'>
+            <properties context=''>
+              <relation connection='excel-direct.1covh8w12npxqj1ej7gby0vkzco9' name='Sheet1' table='[Sheet1$]' type='table'>
+                <columns gridOrigin='A1:B13:no:A1:B13:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Course Combo' ordinal='0' />
+                  <column datatype='integer' name='Student Count' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Classes by Weekday'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Behaviour Charts Selector' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Most Popular Combinations&quot;'>
+              <calculation class='tableau' formula='&quot;Most Popular Combinations&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Class Weekday' datatype='string' name='[Calculation_1431159557568741378]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='DATENAME(&apos;weekday&apos;, [course_date])' />
+            </column>
+            <column caption='Show - Classes by Weekday' datatype='boolean' name='[Calculation_1431159557574451204]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 4] = &quot;Classes by Weekday&quot;' />
+            </column>
+            <column-instance column='[student_id]' derivation='Count' name='[cnt:student_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Course Date' datatype='date' name='[course_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1431159557568741378]' derivation='None' name='[none:Calculation_1431159557568741378:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1431159557574451204]' derivation='None' name='[none:Calculation_1431159557574451204:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557574451204:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1431159557574451204:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557574451204:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557568741378:nk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557568741378:nk]</cols>
+      </table>
+      <simple-id uuid='{43025D8C-F00C-4FBE-AF1E-858231414542}' />
+    </worksheet>
+    <worksheet name='Income Loyal vs Non-loyal'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Loyalty Charts Selector' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income Loyal vs Non-loyal&quot;'>
+              <calculation class='tableau' formula='&quot;Income Loyal vs Non-loyal&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Loyalty Status' datatype='string' name='[Calculation_1295770093762330629]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF { FIXED [student_id] : COUNT([course_round]) } &gt; 1 THEN&#10;    &quot;Loyal&quot;&#10;ELSE&#10;    &quot;Non-loyal&quot;&#10;END' />
+            </column>
+            <column caption='Show - Income Loyal vs Non-loyal' datatype='boolean' name='[Calculation_1431159557567721473]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 3] = &quot;Income Loyal vs Non-loyal&quot;' />
+            </column>
+            <column caption='Amount Irr' datatype='integer' name='[amount_irr]' role='measure' type='quantitative' />
+            <column caption='Course Round' datatype='integer' name='[course_round]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1295770093762330629]' derivation='None' name='[none:Calculation_1295770093762330629:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1431159557567721473]' derivation='None' name='[none:Calculation_1431159557567721473:nk]' pivot='key' type='nominal' />
+            <column-instance column='[amount_irr]' derivation='Sum' name='[pcto:sum:amount_irr:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+            <column-instance column='[amount_irr]' derivation='Sum' name='[sum:amount_irr:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557567721473:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1431159557567721473:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557567721473:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093762330629:nk]' />
+              <wedge-size column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[pcto:sum:amount_irr:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5FEC9A6A-1572-4AFA-8280-3B4D708EA863}' />
+    </worksheet>
+    <worksheet name='Income by Course Type'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+              <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Income by Course Type' datatype='boolean' name='[Calculation_1295770093759299586]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income by Course Type&quot;' />
+            </column>
+            <column caption='Amount Irr' datatype='integer' name='[amount_irr]' role='measure' type='quantitative' />
+            <column caption='Course Type' datatype='string' name='[course_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1295770093759299586]' derivation='None' name='[none:Calculation_1295770093759299586:nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_type]' derivation='None' name='[none:course_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[amount_irr]' derivation='Sum' name='[sum:amount_irr:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093759299586:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1295770093759299586:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093759299586:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]</cols>
+      </table>
+      <simple-id uuid='{55226C47-F096-404D-85CA-5D3A23CD565D}' />
+    </worksheet>
+    <worksheet name='Income by Region'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+              <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Income by Region' datatype='boolean' name='[Calculation_1295770093759565827]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income by Region&quot;' />
+            </column>
+            <column caption='Region' datatype='string' name='[Calculation_975873782699323395]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS(LOWER([address]), &quot;shiraz&quot;) THEN &quot;shiraz&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;safashahr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;eghlid&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;marvdasht&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;zarghan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kazeroon&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;firoozabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kavar&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kharameh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;jahrom&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;estahban&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;neyriz&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;farashband&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;mohr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;maghar&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;darab&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;juyom&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;lamerd&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;arsanjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;khonj&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ardakan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;larestan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;vorabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;fasa&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ghaderabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;abadeh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;zarrindasht&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;sarvestan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;saadat_shahr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;dasht_arzhan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ahl&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ashkanan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;goyem&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;pasargard&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;atashkadeh&quot;) THEN &quot;fars&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;qeshm&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;bastak&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kharg&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;bandarabbas&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kish&quot;) THEN &quot;hormozgan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;bushehr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;genaveh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;borazjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;jam&quot;) THEN &quot;bushehr&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;yasuj&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;gachsaran&quot;) THEN &quot;kohgiluyeh and boyerahmad&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;kerman&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;sirjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;meymand&quot;) THEN &quot;kerman&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;golestan&quot;) THEN &quot;golestan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;ahvaz&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;behbahan&quot;) THEN &quot;khuzestan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;yazd&quot;) THEN &quot;yazd&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;england&quot;) THEN &quot;abroad&quot;&#10;&#10;ELSEIF ISNULL([address]) THEN &quot;unknown&quot;&#10;&#10;ELSE &quot;undefined&quot;&#10;END' />
+            </column>
+            <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+            <column caption='Amount Irr' datatype='integer' name='[amount_irr]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1295770093759565827]' derivation='None' name='[none:Calculation_1295770093759565827:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_975873782699323395]' derivation='None' name='[none:Calculation_975873782699323395:nk]' pivot='key' type='nominal' />
+            <column-instance column='[amount_irr]' derivation='Sum' name='[sum:amount_irr:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093759565827:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1295770093759565827:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782699323395:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093759565827:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782699323395:nk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782699323395:nk]</cols>
+      </table>
+      <simple-id uuid='{9C7F3447-3EFB-40AE-82F3-3A6689B9813C}' />
+    </worksheet>
+    <worksheet name='Income per Month'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+              <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Income per Month' datatype='boolean' name='[Calculation_1295770093758791680]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income per Month&quot;' />
+            </column>
+            <column caption='Amount Irr' datatype='integer' name='[amount_irr]' role='measure' type='quantitative' />
+            <column caption='Course Date' datatype='date' name='[course_date]' role='dimension' type='ordinal' />
+            <column-instance column='[course_date]' derivation='Month' name='[mn:course_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1295770093758791680]' derivation='None' name='[none:Calculation_1295770093758791680:nk]' pivot='key' type='nominal' />
+            <column-instance column='[amount_irr]' derivation='Sum' name='[sum:amount_irr:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093758791680:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1295770093758791680:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093758791680:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[mn:course_date:ok]</cols>
+      </table>
+      <simple-id uuid='{34EB168E-9EB6-41A5-B89C-1031BA927394}' />
+    </worksheet>
+    <worksheet name='Income per Season'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+              <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Income per Season' datatype='boolean' name='[Calculation_1295770093759086593]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2] = &quot;Income per Season&quot;' />
+            </column>
+            <column caption='Season' datatype='string' name='[Calculation_975873782696701953]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE MONTH([course_date])&#10;WHEN 1 THEN &quot;Winter&quot;&#10;WHEN 2 THEN &quot;Winter&quot;&#10;WHEN 3 THEN &quot;Winter&quot;&#10;WHEN 4 THEN &quot;Spring&quot;&#10;WHEN 5 THEN &quot;Spring&quot;&#10;WHEN 6 THEN &quot;Spring&quot;&#10;WHEN 7 THEN &quot;Summer&quot;&#10;WHEN 8 THEN &quot;Summer&quot;&#10;WHEN 9 THEN &quot;Summer&quot;&#10;WHEN 10 THEN &quot;Autumn&quot;&#10;WHEN 11 THEN &quot;Autumn&quot;&#10;WHEN 12 THEN &quot;Autumn&quot;&#10;END' />
+            </column>
+            <column caption='Amount Irr' datatype='integer' name='[amount_irr]' role='measure' type='quantitative' />
+            <column caption='Course Date' datatype='date' name='[course_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1295770093759086593]' derivation='None' name='[none:Calculation_1295770093759086593:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_975873782696701953]' derivation='None' name='[none:Calculation_975873782696701953:nk]' pivot='key' type='nominal' />
+            <column-instance column='[amount_irr]' derivation='Sum' name='[sum:amount_irr:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093759086593:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1295770093759086593:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <manual-sort column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Winter&quot;</bucket>
+              <bucket>&quot;Spring&quot;</bucket>
+              <bucket>&quot;Summer&quot;</bucket>
+              <bucket>&quot;Autumn&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093759086593:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]' value='' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[sum:amount_irr:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]</cols>
+      </table>
+      <simple-id uuid='{3A8F8A85-EA35-4257-BA75-B5E9A4006397}' />
+    </worksheet>
+    <worksheet name='Most Popular Combinations'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (most_popular_course_combos)' name='federated.1rpjhit0j8uzjx12v4nhx03bxv65' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Behaviour Charts Selector' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Most Popular Combinations&quot;'>
+              <calculation class='tableau' formula='&quot;Most Popular Combinations&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1rpjhit0j8uzjx12v4nhx03bxv65'>
+            <column caption='Show - Most Popular Combinations' datatype='boolean' name='[Calculation_1431159557574250499]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 4] = &quot;Most Popular Combinations&quot;' />
+            </column>
+            <column datatype='string' name='[Course Combo]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Student Count]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1431159557574250499]' derivation='None' name='[none:Calculation_1431159557574250499:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Course Combo]' derivation='None' name='[none:Course Combo:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Student Count]' derivation='Sum' name='[sum:Student Count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Calculation_1431159557574250499:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1431159557574250499:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Course Combo:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[sum:Student Count:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Calculation_1431159557574250499:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Course Combo:nk]' />
+              <text column='[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[sum:Student Count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Course Combo:nk]</rows>
+        <cols>[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[sum:Student Count:qk]</cols>
+      </table>
+      <simple-id uuid='{0EB5209A-F489-4F46-8906-FD460A38C44B}' />
+    </worksheet>
+    <worksheet name='Student Loyalty Distribution'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Loyalty Charts Selector' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income Loyal vs Non-loyal&quot;'>
+              <calculation class='tableau' formula='&quot;Income Loyal vs Non-loyal&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Courses per Student' datatype='integer' name='[Calculation_1295770093761597444]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [student_id] : COUNT([course_round]) }' />
+            </column>
+            <column caption='Show - Student Loyalty Distribution' datatype='boolean' name='[Calculation_1431159557567471616]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 3] = &quot;Student Loyalty Distribution&quot;' />
+            </column>
+            <column caption='Course Round' datatype='integer' name='[course_round]' role='measure' type='quantitative' />
+            <column-instance column='[student_id]' derivation='CountD' name='[ctd:student_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1295770093761597444]' derivation='None' name='[none:Calculation_1295770093761597444:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1431159557567471616]' derivation='None' name='[none:Calculation_1431159557567471616:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557567471616:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1431159557567471616:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557567471616:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[ctd:student_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[ctd:student_id:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093761597444:qk]</cols>
+      </table>
+      <simple-id uuid='{7552C59B-8594-4A3A-94B1-DE74F9D4C417}' />
+    </worksheet>
+    <worksheet name='Students by Region'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+              <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Students by Region' datatype='boolean' name='[Calculation_1103030103433678851]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students by Region&quot;' />
+            </column>
+            <column caption='Region' datatype='string' name='[Calculation_975873782699323395]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF CONTAINS(LOWER([address]), &quot;shiraz&quot;) THEN &quot;shiraz&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;safashahr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;eghlid&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;marvdasht&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;zarghan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kazeroon&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;firoozabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kavar&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kharameh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;jahrom&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;estahban&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;neyriz&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;farashband&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;mohr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;maghar&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;darab&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;juyom&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;lamerd&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;arsanjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;khonj&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ardakan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;larestan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;vorabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;fasa&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ghaderabad&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;abadeh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;zarrindasht&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;sarvestan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;saadat_shahr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;dasht_arzhan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ahl&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;ashkanan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;goyem&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;pasargard&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;atashkadeh&quot;) THEN &quot;fars&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;qeshm&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;bastak&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kharg&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;bandarabbas&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;kish&quot;) THEN &quot;hormozgan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;bushehr&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;genaveh&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;borazjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;jam&quot;) THEN &quot;bushehr&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;yasuj&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;gachsaran&quot;) THEN &quot;kohgiluyeh and boyerahmad&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;kerman&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;sirjan&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;meymand&quot;) THEN &quot;kerman&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;golestan&quot;) THEN &quot;golestan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;ahvaz&quot;) OR&#10;       CONTAINS(LOWER([address]), &quot;behbahan&quot;) THEN &quot;khuzestan&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;yazd&quot;) THEN &quot;yazd&quot;&#10;&#10;ELSEIF CONTAINS(LOWER([address]), &quot;england&quot;) THEN &quot;abroad&quot;&#10;&#10;ELSEIF ISNULL([address]) THEN &quot;unknown&quot;&#10;&#10;ELSE &quot;undefined&quot;&#10;END' />
+            </column>
+            <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+            <column-instance column='[student_id]' derivation='Count' name='[cnt:student_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1103030103433678851]' derivation='None' name='[none:Calculation_1103030103433678851:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_975873782699323395]' derivation='None' name='[none:Calculation_975873782699323395:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103433678851:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1103030103433678851:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782699323395:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103433678851:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782699323395:nk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782699323395:nk]</cols>
+      </table>
+      <simple-id uuid='{DBEF3E50-4DFE-4E79-9417-B594535465D0}' />
+    </worksheet>
+    <worksheet name='Students per Course'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+              <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Students per Course' datatype='boolean' name='[Calculation_1103030103433265154]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students per Course&quot;' />
+            </column>
+            <column-instance column='[student_id]' derivation='Count' name='[cnt:student_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Course Type' datatype='string' name='[course_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1103030103433265154]' derivation='None' name='[none:Calculation_1103030103433265154:nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_type]' derivation='None' name='[none:course_type:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103433265154:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1103030103433265154:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103433265154:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]</cols>
+      </table>
+      <simple-id uuid='{82C8655E-9004-4986-B7C8-9924EA67EDDA}' />
+    </worksheet>
+    <worksheet name='Students per Month'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+              <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Students per Month' datatype='boolean' name='[Calculation_1103030103430766592]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students per Month&quot;' />
+            </column>
+            <column-instance column='[student_id]' derivation='Count' name='[cnt:student_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Course Date' datatype='date' name='[course_date]' role='dimension' type='ordinal' />
+            <column-instance column='[course_date]' derivation='Month' name='[mn:course_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1103030103430766592]' derivation='None' name='[none:Calculation_1103030103430766592:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103430766592:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1103030103430766592:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103430766592:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' />
+              <color column='[Parameters].[Parameter 1]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]</rows>
+        <cols>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[mn:course_date:ok]</cols>
+      </table>
+      <simple-id uuid='{482F7BA6-AFD6-4B27-8EBF-1047FFCBB0D0}' />
+    </worksheet>
+    <worksheet name='Students per Season'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data' name='federated.00z0pdi1mefw8q116mhfr0mf0rm9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+              <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.00z0pdi1mefw8q116mhfr0mf0rm9'>
+            <column caption='Show - Students per Season' datatype='boolean' name='[Calculation_1103030103433076737]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 1] = &quot;Students per Season&quot;' />
+            </column>
+            <column caption='Season' datatype='string' name='[Calculation_975873782696701953]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE MONTH([course_date])&#10;WHEN 1 THEN &quot;Winter&quot;&#10;WHEN 2 THEN &quot;Winter&quot;&#10;WHEN 3 THEN &quot;Winter&quot;&#10;WHEN 4 THEN &quot;Spring&quot;&#10;WHEN 5 THEN &quot;Spring&quot;&#10;WHEN 6 THEN &quot;Spring&quot;&#10;WHEN 7 THEN &quot;Summer&quot;&#10;WHEN 8 THEN &quot;Summer&quot;&#10;WHEN 9 THEN &quot;Summer&quot;&#10;WHEN 10 THEN &quot;Autumn&quot;&#10;WHEN 11 THEN &quot;Autumn&quot;&#10;WHEN 12 THEN &quot;Autumn&quot;&#10;END' />
+            </column>
+            <column-instance column='[student_id]' derivation='Count' name='[cnt:student_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Course Date' datatype='date' name='[course_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_1103030103433076737]' derivation='None' name='[none:Calculation_1103030103433076737:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_975873782696701953]' derivation='None' name='[none:Calculation_975873782696701953:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='integer' name='[student_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103433076737:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1103030103433076737:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1103030103433076737:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]' />
+              <wedge-size column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' />
+              <text column='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[cnt:student_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.7031491994857788' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{E1D84DE2-D62F-45FB-8219-E9E085586958}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='NSP_Student_Analytics_Dashboard'>
+      <style />
+      <size maxheight='860' maxwidth='750' minheight='560' minwidth='420' sizing-mode='range' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Student Charts Selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Students by Region&quot;'>
+          <calculation class='tableau' formula='&quot;Students by Region&quot;' />
+          <members>
+            <member value='&quot;Students per Month&quot;' />
+            <member value='&quot;Students per Season&quot;' />
+            <member value='&quot;Students per Course&quot;' />
+            <member value='&quot;Students by Region&quot;' />
+          </members>
+        </column>
+        <column caption='Income Charts Selector' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income per Month&quot;'>
+          <calculation class='tableau' formula='&quot;Income per Month&quot;' />
+          <members>
+            <member value='&quot;Income per Month&quot;' />
+            <member value='&quot;Income per Season&quot;' />
+            <member value='&quot;Income by Course Type&quot;' />
+            <member value='&quot;Income by Region&quot;' />
+          </members>
+        </column>
+        <column caption='Loyalty Charts Selector' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Income Loyal vs Non-loyal&quot;'>
+          <calculation class='tableau' formula='&quot;Income Loyal vs Non-loyal&quot;' />
+          <members>
+            <member value='&quot;Student Loyalty Distribution&quot;' />
+            <member value='&quot;Income Loyal vs Non-loyal&quot;' />
+          </members>
+        </column>
+        <column caption='Behaviour Charts Selector' datatype='string' name='[Parameter 4]' param-domain-type='list' role='measure' type='nominal' value='&quot;Most Popular Combinations&quot;'>
+          <calculation class='tableau' formula='&quot;Most Popular Combinations&quot;' />
+          <members>
+            <member value='&quot;Most Popular Combinations&quot;' />
+            <member value='&quot;Classes by Weekday&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98120' id='49' param='vert' type-v2='layout-flow' w='97648' x='1176' y='940'>
+            <zone h='98120' id='47' type-v2='layout-basic' w='97648' x='1176' y='940'>
+              <zone h='98120' id='16' param='vert' type-v2='layout-flow' w='48824' x='1176' y='940'>
+                <zone fixed-size='431' h='50646' id='8' is-fixed='true' param='horz' type-v2='layout-flow' w='48824' x='1176' y='940'>
+                  <zone fixed-size='160' h='50646' id='7' is-fixed='true' param='vert' type-v2='layout-flow' w='48824' x='1176' y='940'>
+                    <zone h='6110' id='17' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='48824' x='1176' y='940'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='118' id='18' name='Students per Month' show-title='false' w='48824' x='1176' y='7050'>
+                      <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='1058' id='21' name='Students per Course' show-title='false' w='48824' x='1176' y='7168'>
+                      <layout-cache fixed-size-h='1' type-h='fixed' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='32667' id='23' name='Students by Region' show-title='false' w='48824' x='1176' y='8226'>
+                      <layout-cache minheight='220' type-h='scalable' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='3525' id='19' name='Students per Season' show-title='false' w='48824' x='1176' y='40893'>
+                      <layout-cache cell-count-h='1' type-h='cell' type-w='fixed' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='1058' id='20' name='Students per Season' pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]' show-title='false' type-v2='color' w='48824' x='1176' y='44418'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='6110' id='25' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='48824' x='1176' y='45476'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone h='46180' id='24' name='Income per Month' show-title='false' w='48824' x='1176' y='51586'>
+                  <layout-cache minheight='200' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='118' id='26' name='Income per Season' show-title='false' w='48824' x='1176' y='97766'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='1058' id='27' name='Income by Course Type' show-title='false' w='48824' x='1176' y='97884'>
+                  <layout-cache fixed-size-h='1' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='118' id='28' name='Income by Region' show-title='false' w='48824' x='1176' y='98942'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='98120' id='29' param='horz' type-v2='layout-flow' w='48824' x='50000' y='940'>
+                <zone h='98120' id='42' is-fixed='true' type-v2='layout-basic' w='48824' x='50000' y='940'>
+                  <zone h='44480' id='30' param='vert' type-v2='layout-flow' w='48824' x='50000' y='940'>
+                    <zone h='6110' id='37' mode='compact' param='[Parameters].[Parameter 3]' type-v2='paramctrl' w='48824' x='50000' y='940'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='118' id='36' name='Student Loyalty Distribution' show-title='false' w='48824' x='50000' y='7050'>
+                      <layout-cache has-max-size-h='true' has-max-size-w='true' maxheight='1' maxwidth='1' minheight='1' minwidth='1' type-h='scalable' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='30496' id='38' name='Income Loyal vs Non-loyal' show-title='false' w='48824' x='50000' y='7168'>
+                      <layout-cache cell-count-h='1' type-h='cell' type-w='cell' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='7756' id='39' name='Income Loyal vs Non-loyal' pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093762330629:nk]' type-v2='color' w='48824' x='50000' y='37664'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='53640' id='44' is-fixed='true' type-v2='layout-basic' w='48824' x='50000' y='45420'>
+                    <zone h='7020' id='43' param='vert' type-v2='layout-flow' w='48824' x='50000' y='45420'>
+                      <zone fixed-size='45' h='6228' id='41' is-fixed='true' mode='compact' param='[Parameters].[Parameter 4]' type-v2='paramctrl' w='48824' x='50000' y='45420'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone h='46620' id='45' param='vert' type-v2='layout-flow' w='48824' x='50000' y='52440'>
+                      <zone h='118' id='46' name='Classes by Weekday' show-title='false' w='48824' x='50000' y='52440'>
+                        <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='37955' id='40' name='Most Popular Combinations' show-title='false' w='48824' x='50000' y='52558'>
+                        <layout-cache fixed-size-h='315' minwidth='240' type-h='fixed' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='3850' minheight='3850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='51' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98120' id='50' param='vert' type-v2='layout-flow' w='97648' x='1176' y='940'>
+                <zone h='6110' id='17' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='48824' x='1176' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6110' id='37' mode='compact' param='[Parameters].[Parameter 3]' type-v2='paramctrl' w='48824' x='50000' y='940'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='118' id='18' is-fixed='true' name='Students per Month' show-title='false' w='48824' x='1176' y='7050'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='118' id='36' is-fixed='true' name='Student Loyalty Distribution' show-title='false' w='48824' x='50000' y='7050'>
+                  <layout-cache has-max-size-h='true' has-max-size-w='true' maxheight='1' maxwidth='1' minheight='1' minwidth='1' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='1058' id='21' is-fixed='true' name='Students per Course' show-title='false' w='48824' x='1176' y='7168'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='254' h='30496' id='38' is-fixed='true' name='Income Loyal vs Non-loyal' show-title='false' w='48824' x='50000' y='7168'>
+                  <layout-cache cell-count-h='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7756' id='39' name='Income Loyal vs Non-loyal' pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093762330629:nk]' type-v2='color' w='48824' x='50000' y='37664'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='273' h='32667' id='23' is-fixed='true' name='Students by Region' show-title='false' w='48824' x='1176' y='8226'>
+                  <layout-cache minheight='220' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='3525' id='19' is-fixed='true' name='Students per Season' show-title='false' w='48824' x='1176' y='40893'>
+                  <layout-cache type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1058' id='20' name='Students per Season' pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]' show-title='false' type-v2='color' w='48824' x='1176' y='44418'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='45' h='6228' id='41' mode='compact' param='[Parameters].[Parameter 4]' type-v2='paramctrl' w='48824' x='50000' y='45420'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6110' id='25' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='48824' x='1176' y='45476'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46180' id='24' is-fixed='true' name='Income per Month' show-title='false' w='48824' x='1176' y='51586'>
+                  <layout-cache minheight='200' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='118' id='46' is-fixed='true' name='Classes by Weekday' show-title='false' w='48824' x='50000' y='52440'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37955' id='40' is-fixed='true' name='Most Popular Combinations' show-title='false' w='48824' x='50000' y='52558'>
+                  <layout-cache fixed-size-h='315' minwidth='240' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='118' id='26' is-fixed='true' name='Income per Season' show-title='false' w='48824' x='1176' y='97766'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='1058' id='27' is-fixed='true' name='Income by Course Type' show-title='false' w='48824' x='1176' y='97884'>
+                  <layout-cache fixed-size-h='1' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='118' id='28' is-fixed='true' name='Income by Region' show-title='false' w='48824' x='1176' y='98942'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9FB5BAEE-D56D-47E7-8772-E904D43E2493}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='worksheet' name='Students per Month'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{E3E46263-3794-4486-9F5C-3825CE76413F}' />
+    </window>
+    <window class='worksheet' name='Students per Season'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_975873782696701953:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{2B8E87BA-E702-487F-BD16-3AAC7E9D9F35}' />
+    </window>
+    <window class='worksheet' name='Students per Course'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:course_type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8B22C80E-ECE9-40E3-98BF-741889ABEB55}' />
+    </window>
+    <window class='worksheet' name='Students by Region'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{3C7C019A-4EB6-4EFB-823D-D29E9EC87FAA}' />
+    </window>
+    <window class='worksheet' name='Income per Month'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{74488727-8D23-4F1A-BD8E-810C68A44C47}' />
+    </window>
+    <window class='worksheet' name='Income per Season'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{DF5B1AC5-6962-4EDF-85D6-D9025966A0FA}' />
+    </window>
+    <window class='worksheet' name='Income by Course Type'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AFBC4D27-0E1F-41E0-B007-7FC3B4DFFAEC}' />
+    </window>
+    <window class='worksheet' name='Income by Region'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{7877932F-BF05-470F-BC72-344D479A5567}' />
+    </window>
+    <window class='worksheet' name='Student Loyalty Distribution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557567471616:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6BA4766A-29D0-4962-9218-7F201AB6AAC2}' />
+    </window>
+    <window class='worksheet' name='Income Loyal vs Non-loyal'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1295770093762330629:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557567721473:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F3CA21E6-EECA-4C20-95A2-D6632F4B05AC}' />
+    </window>
+    <window class='worksheet' name='Most Popular Combinations'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Calculation_1431159557574250499:nk]</field>
+            <field>[federated.1rpjhit0j8uzjx12v4nhx03bxv65].[none:Course Combo:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C0CB28CD-67A6-411E-88BD-B299E5C2E9B7}' />
+    </window>
+    <window class='worksheet' name='Classes by Weekday'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557568741378:nk]</field>
+            <field>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:Calculation_1431159557574451204:nk]</field>
+            <field>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[none:student_id:ok]</field>
+            <field>[federated.00z0pdi1mefw8q116mhfr0mf0rm9].[yr:course_date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{C8A01D18-478E-4C26-A200-2E6C4F82D6BE}' />
+    </window>
+    <window class='dashboard' maximized='true' name='NSP_Student_Analytics_Dashboard'>
+      <viewpoints>
+        <viewpoint name='Classes by Weekday'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Income Loyal vs Non-loyal'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Income by Course Type' />
+        <viewpoint name='Income by Region'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Income per Month'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Income per Season'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Most Popular Combinations' />
+        <viewpoint name='Student Loyalty Distribution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Students by Region'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Students per Course' />
+        <viewpoint name='Students per Month'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Students per Season'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{A6BEA2C7-22E6-4D48-A360-82D9474DCA39}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Classes by Weekday' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Income Loyal vs Non-loyal' width='192'>
+      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
+      B+ELz5w7Zv8f1oC2LcHGTDwAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Most Popular Combinations' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='NSP_Student_Analytics_Dashboard' width='192'>
+      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
+      ujgSnqIAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
