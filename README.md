@@ -76,8 +76,8 @@ This dashboard showcases core metrics such as:
 │   ├── 07_Regional_and_Seasonal_Comparative_Analysis.pdf
 │   ├── 08_Management_and_Marketing_Recommendations.pdf
 │   └──latex_sources/  
-│ 	    ├── *.tex # LaTeX source files for each report
-│       └── *.png # Figures used in the reports
+│ 	   ├── *.tex # LaTeX source files for each report
+│      └── *.png # Figures used in the reports
 ├── dashboard/
 │   └── NSP_Student_Analytics_Dashboard.twb
 ├── docs/
