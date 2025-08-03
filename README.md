@@ -64,10 +64,8 @@ This dashboard showcases core metrics such as:
 /N.S.P-Data-Analytics/
 ├── data/
 │   └── data.csv
-├── notebooks/
+├── notebook/
 │   └── analysis_engine.ipynb
-├── figures/
-│   └── *.png # All figures generated from the notebook (used in reports)
 ├── reports/
 │   ├── 01_Enrolment_Trend_Analysis.pdf
 │   ├── 02_Course_Analysis.pdf
@@ -82,6 +80,10 @@ This dashboard showcases core metrics such as:
 │   └── *.png # Figures used in the reports
 ├── dashboard/
 │   └── NSP_Student_Analytics_Dashboard.twb
+├── docs/
+│   └── index.html
+├── figures/
+│   └── *.png # All figures generated from the notebook (used in reports)
 └── README.md
 ```
 
