@@ -1,64 +1,122 @@
 # Data Analysis Portfolio | N.S.P Educational & Tourism Institute (2022–2024)
 
-This project presents a comprehensive **data analysis and business insight report** based on real registration data from the **N.S.P Educational and Tourism Institute**, located in Shiraz, Iran.
+**This repository is a real-world business analytics case study**, based on two years of operational data from a private education and training institute, where I acted as the **sole data analyst responsible for turning raw registrations into strategic decisions.**
 
-The work was conducted during my **two-year tenure (Feb 2022 – Apr 2024)** as a Data Analyst at the institute. It includes valuable insights on understanding trends in enrolment, course popularity, regional engagement, revenue generation, and student loyalty.
-
----
-
-## Objective
-
-To uncover actionable insights from course and registration data to help the institute:
-- Optimise course scheduling and pricing
-- Improve student retention
-- Tailor marketing strategies by region and season
-- Boost revenue through loyalty programs and bundled offerings
+This project is not a historical report. It is a **collection of analytical frameworks, revenue models, segmentation strategies, and behavioural insights** that demonstrate how I approach business problems with data.
 
 ---
 
-## Key Analyses
+## Business Context
 
-### Enrolment Trends
-- Summer and autumn had the highest student volumes
-- Weekends (Thu/Fri) were the most common class days
+The institute was facing several commercial challenges:
 
-### Course Analysis
-- Barista and Pizza courses were most popular and consistent across seasons
+- Highly **volatile demand** across seasons
 
-### Income Patterns
-- Barista courses alone generated over 8.3B IRR in revenue
-- Summer and autumn were also peak revenue seasons
+- **Low student retention** and limited loyalty
 
-### Regional Insights
-- Shiraz accounted for nearly 58% of income
-- Smaller provinces showed potential for expansion
+- No clear understanding of **which courses actually drive profit**
 
-### Loyalty Behaviour
-- 83% of students only attended one course
-- Repeat students (17%) contributed over 25% of revenue
+- Weak visibility into **regional performance and marketing ROI**
 
-### Registration Patterns
-- Most multi-course enrolments occurred on the same day
-- Bundles like Burger + Pizza were most common
+- No data-driven framework for **bundling, pricing, or scheduling**
+
+---
+
+## My Role
+
+As the Data Analyst, I:
+
+- Designed the **data model** from transactional registration records
+
+- Built **revenue, cohort, and behavioural metrics**
+
+- Developed **segmentation logic** for students, courses, and regions
+
+- Produced **automated reports** and an **interactive Tableau dashboard**
+
+- Delivered **commercial recommendations** to management
+
+---
+
+## What This Project Demonstrates
+
+This project showcases my ability to:
+
+- Translate **messy operational data** into business-ready datasets
+
+- Build **KPIs and metrics** for revenue, retention, and demand
+
+- Perform **cohort, segmentation, and funnel analysis**
+
+- Identify **profit drivers vs volume drivers**
+
+- Support **pricing, marketing, and capacity decisions**
+
+- Communicate insights through **clear dashboards and reports**
+
+---
+
+## Key Business Insights
+
+### Revenue Drivers
+
+- Barista courses were the largest single revenue stream
+- A small subset of courses generated a disproportionate share of income
+
+### Seasonality
+
+- Summer and autumn were peak demand and revenue periods
+- Capacity planning and staffing should be aligned with these cycles
+
+### Customer Loyalty
+
+- Only 17% of students returned
+- However, this group generated over 25% of total revenue
+
+### Regional Performance
+
+- Shiraz generated ~58% of total income
+- Several smaller provinces showed high revenue per student, indicating expansion potential
+
+### Behavioural Patterns
+
+- Most multi-course purchases happened on the same day
+- Certain course pairs (e.g., Burger + Pizza) showed natural bundling behaviour
 
 ---
 
 ## Interactive Dashboard
 
-Explore key insights interactively through the published Tableau dashboard:
+A Tableau dashboard was built to allow management to explore:
+
+- Revenue and enrolment by time, course, and region
+- Loyalty vs first-time customer behaviour
+- Course combinations and purchasing patterns
+- Seasonal and regional trends
+
+![NSP Student Analytics Dashboard](dashboard/dashboard_preview_1.png) 
+![NSP Student Analytics Dashboard](dashboard/dashboard_preview_2.png) 
+
+**Live dashboard:**
 
 [NSP Student Analytics Dashboard](https://moh-shz.github.io/N.S.P-Data-Analytics/)
 
-This dashboard showcases core metrics such as:
+---
 
-- Student enrollment by month, season, course, and region
-- Revenue breakdowns by time, course type, and loyalty status
-- Regional engagement and trends
-- Popular course combinations and behavioural patterns
+## Data Governance & Privacy
+
+All data in this repository has been:
+
+- Fully anonymised
+- Stripped of personal and identifiable information
+- Sanitised for portfolio use
+
+The dataset is shared with permission strictly for analytical demonstration.
+This project complies with data protection and confidentiality standards expected in professional environments.
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```
 /N.S.P-Data-Analytics/
@@ -79,7 +137,9 @@ This dashboard showcases core metrics such as:
 │       ├── *.tex # LaTeX source files for each report
 │       └── *.png # Figures used in the reports
 ├── dashboard/
-│   └── NSP_Student_Analytics_Dashboard.twb
+│   ├── NSP_Student_Analytics_Dashboard.twb
+│   ├── dashboard_preview_1.png
+│   └── dashboard_preview_2.png
 ├── docs/
 │   └── index.html
 ├── figures/
@@ -89,23 +149,27 @@ This dashboard showcases core metrics such as:
 
 ---
 
-## Outcomes
+## Business Impact
 
-- Delivered **clear strategic recommendations** to improve student retention and revenue
-- Enabled data-driven planning for course scheduling and regional marketing
-- Created reusable visualisations and automated reports
-- Demonstrated **real-world analytics experience** on educational operations
+This analytics system enabled the institute to:
+
+- Identify high-ROI courses and regions
+- Target high-value returning students
+- Design bundles and loyalty strategies
+- Improve seasonal capacity planning
+- Base decisions on evidence instead of intuition
 
 ---
 
-## Contact
+## Author
 
-**Created by**: Mohammad Sharzehei  
+**Mohammad Sharzehei**  
 Email: sharzehm@gmail.com  
 LinkedIn: www.linkedin.com/in/msharzehei
 
 ---
 
-## License
+## Usage & License
 
-This project is for educational and portfolio purposes only. Please do not reuse the dataset or reports commercially without permission.
+This repository is provided for portfolio and educational purposes only.
+The dataset and reports may not be used for commercial purposes.
